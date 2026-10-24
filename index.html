@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a80712">
+  <meta name="description" content="আলোকায়ন ফাউন্ডেশন ও আলোকায়ন ব্লাড ব্যাংক — চট্টগ্রামে রক্তদাতা খুঁজুন, রক্তদাতা হিসেবে নিবন্ধন করুন।">
+  <title>আলোকায়ন ব্লাড ব্যাংক | রক্তদাতা খুঁজুন</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="আলোকায়ন ব্লাড ব্যাংক হোম">
+      <img src="assets/alokayon-blood-bank.png" alt="আলোকায়ন ব্লাড ব্যাংকের মূল লোগো">
+      <span><strong>আলোকায়ন ব্লাড ব্যাংক</strong><small>আলোকায়ন ফাউন্ডেশন</small></span>
+    </a>
+    <nav>
+      <a href="#search">রক্তদাতা খুঁজুন</a>
+      <a href="#register">রক্তদাতা হোন</a>
+      <a href="#request">জরুরি অনুরোধ</a>
+      <button id="adminOpen" class="btn btn-outline" type="button">অ্যাডমিন</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">মানবতার সেবায় • চট্টগ্রাম</span>
+        <h1>রক্তদাতা খুঁজুন,<br><em>জীবন বাঁচান</em></h1>
+        <p>আপনার স্বেচ্ছায় দেওয়া রক্ত কারও জীবনে নতুন আশার আলো হতে পারে। চট্টগ্রামের রক্তদাতাদের খুঁজুন অথবা নিজেই নিবন্ধন করুন।</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#search">রক্তদাতা খুঁজুন</a>
+          <a class="btn btn-light" href="#register">রক্তদাতা হিসেবে নিবন্ধন</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="drop">+</div>
+        <div class="hero-stat"><strong>এক ফোঁটা রক্ত</strong><span>বাঁচাতে পারে একটি জীবন</span></div>
+      </div>
+    </section>
+
+    <section class="trust-row" aria-label="সেবাসমূহ">
+      <div><span class="trust-icon">♥</span><strong>স্বেচ্ছায় রক্তদান</strong><small>মানবতার পাশে থাকুন</small></div>
+      <div><span class="trust-icon">⌖</span><strong>চট্টগ্রামভিত্তিক</strong><small>এলাকাভিত্তিক খোঁজ</small></div>
+      <div><span class="trust-icon">✓</span><strong>সম্মতিভিত্তিক তথ্য</strong><small>প্রকাশের আগে অনুমতি</small></div>
+    </section>
+
+    <section id="search" class="section">
+      <div class="section-heading"><span class="eyebrow">DONOR DIRECTORY</span><h2>রক্তদাতা খুঁজুন</h2><p>রক্তের গ্রুপ ও এলাকা নির্বাচন করে খুঁজুন।</p></div>
+      <form id="searchForm" class="panel search-grid">
+        <label>রক্তের গ্রুপ
+          <select id="searchBloodGroup">
+            <option value="">সব গ্রুপ</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+          </select>
+        </label>
+        <label>থানা / উপজেলা
+          <select id="searchArea"><option value="">সব এলাকা</option></select>
+        </label>
+        <button class="btn btn-primary" type="submit">খুঁজুন</button>
+      </form>
+      <div id="searchMessage" class="message" role="status">ডেটাবেজ সংযোগ সেটআপ করার পর অনুমোদিত ডোনারদের ফলাফল এখানে দেখা যাবে।</div>
+      <div id="donorResults" class="donor-grid"></div>
+    </section>
+
+    <section id="register" class="section section-tint">
+      <div class="section-heading"><span class="eyebrow">BECOME A DONOR</span><h2>রক্তদাতা হিসেবে নিবন্ধন করুন</h2><p>নিবন্ধনের আগে নিশ্চিত হোন যে আপনার দেওয়া তথ্য সঠিক এবং যোগাযোগে সম্মতি আছে।</p></div>
+      <form id="registerForm" class="panel form-grid">
+        <label>পূর্ণ নাম *<input name="full_name" required maxlength="80" autocomplete="name" placeholder="আপনার নাম"></label>
+        <label>রক্তের গ্রুপ *<select name="blood_group" required><option value="">নির্বাচন করুন</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></label>
+        <label>মোবাইল নম্বর *<input name="phone" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
+        <label>থানা / উপজেলা *<select name="area" id="registerArea" required><option value="">নির্বাচন করুন</option></select></label>
+        <label>শেষ রক্তদানের তারিখ (যদি থাকে)<input name="last_donation_date" type="date"></label>
+        <label>আপনি কি বর্তমানে রক্তদানে আগ্রহী? *
+          <select name="available" required><option value="true">হ্যাঁ</option><option value="false">এই মুহূর্তে নই</option></select>
+        </label>
+        <label class="full">এলাকা / সংক্ষিপ্ত ঠিকানা (বাড়ির পূর্ণ ঠিকানা দেবেন না)<input name="locality" maxlength="120" placeholder="যেমন: পাঁচলাইশ, চট্টগ্রাম"></label>
+        <label class="consent full"><input type="checkbox" name="consent" required> আমার দেওয়া তথ্য আলোকায়ন ব্লাড ব্যাংক যাচাই করবে এবং আমার সম্মতি অনুযায়ী রক্তের প্রয়োজনে যোগাযোগের জন্য ব্যবহার করতে পারবে।</label>
+        <div class="full"><button class="btn btn-primary" type="submit">নিবন্ধন জমা দিন</button><p class="form-note">নিবন্ধন মানেই চিকিৎসাগতভাবে রক্তদানের যোগ্যতা নিশ্চিত নয়। রক্তদানের আগে হাসপাতাল/স্বাস্থ্যকর্মীর পরামর্শ নিন।</p></div>
+      </form>
+      <div id="registerMessage" class="message" role="status"></div>
+    </section>
+
+    <section id="request" class="section">
+      <div class="section-heading"><span class="eyebrow">URGENT REQUEST</span><h2>জরুরি রক্তের অনুরোধ</h2><p>রোগীর ব্যক্তিগত তথ্য অপ্রয়োজনে প্রকাশ করবেন না। অনুরোধ যাচাইয়ের পর যোগাযোগ করা হবে।</p></div>
+      <form id="requestForm" class="panel form-grid">
+        <label>যোগাযোগকারীর নাম *<input name="requester_name" required maxlength="80"></label>
+        <label>যোগাযোগ নম্বর *<input name="contact_phone" required maxlength="20" inputmode="tel"></label>
+        <label>রক্তের গ্রুপ *<select name="blood_group" required><option value="">নির্বাচন করুন</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></label>
+        <label>হাসপাতাল / এলাকা *<select name="area" id="requestArea" required><option value="">নির্বাচন করুন</option></select></label>
+        <label>কখন প্রয়োজন *<input name="needed_at" type="datetime-local" required></label>
+        <label>প্রয়োজনীয় ব্যাগের সংখ্যা *<input name="units" type="number" min="1" max="10" value="1" required></label>
+        <label class="full">অতিরিক্ত তথ্য (ঐচ্ছিক)<textarea name="details" rows="3" maxlength="500" placeholder="রোগীর পূর্ণ নাম/জাতীয় পরিচয়পত্র বা অপ্রয়োজনীয় চিকিৎসা তথ্য দেবেন না।"></textarea></label>
+        <div class="full"><button class="btn btn-primary" type="submit">অনুরোধ জমা দিন</button></div>
+      </form>
+      <div id="requestMessage" class="message" role="status"></div>
+    </section>
+
+    <section class="foundation">
+      <img src="assets/alokayon-foundation.png" alt="আলোকায়ন ফাউন্ডেশনের মূল লোগো">
+      <div><span class="eyebrow">OUR ORGANIZATION</span><h2>আলোকায়ন ফাউন্ডেশন</h2><p>মানবিক সেবা, স্বেচ্ছায় রক্তদান এবং সমাজকল্যাণমূলক কাজে মানুষের পাশে থাকার প্রত্যয়।</p></div>
+    </section>
+  </main>
+
+  <footer><img src="assets/alokayon-blood-bank.png" alt=""><div><strong>আলোকায়ন ব্লাড ব্যাংক</strong><small>আলোকায়ন ফাউন্ডেশন • চট্টগ্রাম</small></div><span>মানবতার সেবায়, মানুষের পাশে</span></footer>
+
+  <dialog id="adminDialog">
+    <form method="dialog" class="dialog-top"><h2>অ্যাডমিন লগইন</h2><button aria-label="বন্ধ করুন" class="close" value="cancel">×</button></form>
+    <form id="adminLoginForm" class="admin-form">
+      <label>ইমেইল<input type="email" name="email" required autocomplete="username"></label>
+      <label>পাসওয়ার্ড<input type="password" name="password" required autocomplete="current-password"></label>
+      <button class="btn btn-primary" type="submit">লগইন</button>
+      <p class="form-note">প্রথমে Supabase-এ নিজের অ্যাডমিন অ্যাকাউন্ট তৈরি করুন। পাবলিক সাইন-আপ বন্ধ রাখুন।</p>
+    </form>
+    <div id="adminMessage" class="message"></div>
+    <div id="adminPanel" hidden>
+      <h3>নিবন্ধন পর্যালোচনা</h3><p class="form-note">অনুমোদন করলে সম্মতিপ্রাপ্ত ডোনার সার্চে দেখানো হবে।</p>
+      <div id="pendingDonors"></div>
+      <h3>জরুরি অনুরোধ</h3><div id="adminRequests"></div>
+      <button id="adminLogout" class="btn btn-outline" type="button">লগআউট</button>
+    </div>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
